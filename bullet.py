@@ -10,13 +10,13 @@ class Bullet(Sprite):
 
         self.rect = pygame.Rect(0, 
                                 0,
-                                self.settings.bullet_width,
-                                self.settings.bullet_height)
+                                self.settings.bullet_height,
+                                self.settings.bullet_width)
         
-        self.rect.midtop = ai_game.ship.rect.midtop
+        self.rect.midright = ai_game.ship.rect.midright
 
     def update(self):
-        self.rect.y -= self.settings.bullet_speed
+        self.rect.x += self.settings.bullet_speed
 
     def draw_bullet(self):
         pygame.draw.rect(self.screen, self.color, self.rect)
