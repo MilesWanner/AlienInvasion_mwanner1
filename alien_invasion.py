@@ -16,7 +16,7 @@ class AlienInvasion:
         self.settings = Settings()
         self.screen = pygame.display.set_mode((self.settings.resolution))
         self.clock = pygame.time.Clock()
-        pygame.display.set_caption("Alien Invasion")
+        pygame.display.set_caption("Alien Invasion - Track 1")
         self.stats = GameStats(self)
 
         self.bg_color = self.settings.bg_color
