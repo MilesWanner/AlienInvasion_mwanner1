@@ -1,4 +1,5 @@
 import pygame
+from pathlib import Path
 
 class Ship:
     def __init__(self, ai_game):
@@ -6,7 +7,8 @@ class Ship:
         self.screen_rect = self.screen.get_rect()
         self.settings = ai_game.settings
 
-        self.image = pygame.image.load('images/ship.bmp')
+        image_path = Path(__file__).parent / "images" / "ship.bmp"
+        self.image = pygame.image.load(image_path)
         self.rotated_image = pygame.transform.rotate(self.image, -90)
         self.rect = self.rotated_image.get_rect()
         self.rect.midleft = self.screen_rect.midleft

@@ -1,12 +1,14 @@
 import pygame
 from pygame.sprite import Sprite
+from pathlib import Path
 
 class Alien(Sprite):
     def __init__(self, ai_game):
         super().__init__()
 
         self.screen = ai_game.screen
-        self.image = pygame.image.load('images/alien.bmp')
+        image_path = Path(__file__).parent / "images" / "alien.bmp"
+        self.image = pygame.image.load(image_path)
         self.rect = self.image.get_rect()
 
         self.rect.x = self.rect.width
