@@ -12,7 +12,7 @@ from pathlib import Path
 
 class Ship:
     """Represent and manage the player-controlled ship."""
-    def __init__(self, ai_game):
+    def __init__(self, ai_game: "AlienInvasion") -> None:
         """Initialize the ship and place it along the left edge of the screen."""
         self.screen = ai_game.screen
         self.screen_rect = self.screen.get_rect()
@@ -26,18 +26,17 @@ class Ship:
         self.moving_up = False
         self.moving_down = False
 
-    def update(self):
+    def update(self) -> None:
         """Update the ship's vertical position within the screen boundaries."""
         if self.moving_up and self.rect.top > 0:
             self.rect.y -= self.settings.ship_speed
         if self.moving_down and self.rect.bottom < self.screen_rect.bottom:
             self.rect.y += self.settings.ship_speed
 
-    def blitme(self):
-        """Draw the ship to its current position."""
+    def blitme(self) -> None:
+        """Draw the ship at its current position."""
         self.screen.blit(self.rotated_image, self.rect)
 
-    def center_ship(self):
+    def center_ship(self) -> None:
         """Return the ship to its starting position on the left edge."""
         self.rect.midleft = self.screen_rect.midleft
-        self.x = float(self.rect.x)

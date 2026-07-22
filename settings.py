@@ -9,7 +9,7 @@ Date: July 2026
 
 class Settings:
     """Store settings for the Alien Invasion game."""
-    def __init__(self):
+    def __init__(self) -> None:
         """Initialize screen, ship, bullet, alien, and lives settings."""
         self.screen_width = 1200
         self.screen_height = 700

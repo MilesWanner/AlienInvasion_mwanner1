@@ -13,7 +13,7 @@ from pathlib import Path
 
 class Alien(Sprite):
     """Represents a single alien in the fleet."""
-    def __init__(self, ai_game):
+    def __init__(self, ai_game: "AlienInvasion") -> None:
         """Initialize the alien, load its image, and set its starting position."""
         super().__init__()
 
@@ -27,11 +27,11 @@ class Alien(Sprite):
 
         self.settings = ai_game.settings
 
-    def update(self):
+    def update(self) -> None:
         """Update the alien's horizontal position based on the fleet direction."""
         self.rect.x += self.settings.alien_speed * self.settings.fleet_direction
 
-    def check_edges(self):
+    def check_edges(self) -> bool:
         """Return True if the alien has reached a screen edge."""
         screen_rect = self.screen.get_rect()
         return (self.rect.right >= screen_rect.right) or (self.rect.left <= 0)

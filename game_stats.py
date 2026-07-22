@@ -9,11 +9,11 @@ Date: July 2026
 
 class GameStats:
     """Track statistics that change during the game."""
-    def __init__(self, ai_game):
+    def __init__(self, ai_game: "AlienInvasion") -> None:
         """Store the game settings and initialize game statistics."""
         self.settings = ai_game.settings
         self.reset_stats()
 
-    def reset_stats(self):
+    def reset_stats(self) -> None:
         """Reset the number of remaining ships to the configured limit."""
         self.ships_left = self.settings.ship_limit

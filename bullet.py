@@ -12,7 +12,7 @@ from pygame.sprite import Sprite
 
 class Bullet(Sprite):
     """Represent a bullet fired by the player's ship."""
-    def __init__(self, ai_game):
+    def __init__(self, ai_game: "AlienInvasion") -> None:
         """Initialize the bullet's size, color, and starting position."""
         super().__init__()
         self.screen = ai_game.screen
@@ -26,10 +26,10 @@ class Bullet(Sprite):
         
         self.rect.midright = ai_game.ship.rect.midright
 
-    def update(self):
+    def update(self) -> None:
         """Update the bullet's position to move horizontally across the screen."""
         self.rect.x += self.settings.bullet_speed
 
-    def draw_bullet(self):
+    def draw_bullet(self) -> None:
         """Draw the bullet at its current position."""
         pygame.draw.rect(self.screen, self.color, self.rect)
