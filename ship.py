@@ -9,14 +9,17 @@ Date: July 2026
 
 import pygame
 from pathlib import Path
+from pygame.sprite import Sprite
 
-class Ship:
+class Ship(Sprite):
     """Represent and manage the player-controlled ship."""
     def __init__(self, ai_game: "AlienInvasion") -> None:
         """Initialize the ship and place it along the left edge of the screen."""
         self.screen = ai_game.screen
         self.screen_rect = self.screen.get_rect()
         self.settings = ai_game.settings
+
+        super().__init__()
 
         image_path = Path(__file__).parent / "images" / "ship.bmp"
         self.image = pygame.image.load(image_path)
