@@ -1,18 +1,85 @@
 # Alien Invasion
 
 ## Author
+
 Miles Wanner
 
 ## Project Description
-Alien Invasion is a Python game built with Pygame. Players control a ship, move left and right, and fire bullets. This project is designed to reinforce object-oriented programming and game development concepts.
 
-### Final Project - Chosen Track
-For my Final Project, I have chosen to follow Track 1: Custom Game Mechanics. This will change the orientation, movement, and loss conditions of the game.
+Alien Invasion is a 2D game built with Python and Pygame. For Track 1: Custom Game Mechanics, the original Alien Invasion gameplay is being redesigned into a side-scrolling format. The player controls a ship positioned along the left edge of the screen, moves it up and down, and fires bullets horizontally toward the right side of the screen.
 
-For Milestone 1, I plan to have the ship facing east, with bullets traveling horizontally in the same direction. The aliens will be rotated 90 degrees clockwise so the bottom of each alien faces west toward the ship.
+This project reinforces object-oriented programming, event handling, collision detection, game states, scoring, and version-control practices.
 
-For Milestone 2, I plan to maintain consistency between the aliens' logic and the ship's mechanics by having the aliens spawn on the right side of the screen instead of the top. This allows the aliens to move westward toward the ship, while the ship moves up and down along the left edge instead of left and right along the bottom edge. In addition to allowing the bullets to collide with and destroy the aliens, I will update the game so the player loses a life and the game resets whenever an alien collides with the ship or reaches the left edge of the screen behind the ship.
+## Controls
 
-For Milestone 3, I plan to finalize the game by implementing a "Play" button, game states, and a HUD for scoring. The HUD will display the current score and a 60-second timer in the top right corner, the high score at the top center of the screen above the alien fleet, and the remaining lives in the top left corner above the ship sprite. The timer will serve as an additional gameplay feature.
+- Up Arrow: Move the ship up
 
-Each milestone will include all necessary modules, classes, and functions. I also plan to update the docstrings and make small, meaningful commits to track my progress throughout the project.
+- Down Arrow: Move the ship down
+
+- Spacebar: Fire a bullet
+
+- Q: Quit the game
+
+- Mouse: Click the Play button to start or restart the game
+
+## Final Project — Chosen Track
+
+For my Final Project, I chose Track 1: Custom Game Mechanics. This track changes the ship's orientation, movement, projectile direction, alien behavior, and loss conditions.
+
+### Milestone 1 — New Ship Mechanics
+
+For Milestone 1, I changed the ship so it:
+
+- Faces east toward the right side of the screen
+
+- Starts along the left edge of the game window
+
+- Moves vertically using the Up and Down Arrow keys
+
+- Fires bullets horizontally from its right side
+
+I also updated the display caption, used pathlib for asset paths, added complete docstrings and type hints, and maintained small, meaningful commits throughout development.
+
+### Milestone 2 — Fleet and Collision Logic
+
+For Milestone 2, I plan to update the alien fleet so it is consistent with the side-scrolling mechanics. The aliens will spawn toward the right side of the screen and move west toward the player's ship. Bullet-alien collisions will continue to remove aliens, and the loss conditions will be updated so the player loses a life when:
+
+- An alien collides with the ship
+
+- An alien reaches the edge behind the ship
+
+### Final Submission — UI and Game States
+
+For the final submission, I plan to complete the game with:
+
+- A Play button
+
+- Active and inactive game states
+
+- A HUD showing score, high score, level, and lives remaining
+
+- A hidden mouse cursor while the game is active
+
+- Finalized side-scrolling fleet behavior and loss conditions
+
+## Installation
+
+Install the required dependency with:
+
+```text
+pip install -r requirements.txt
+```
+
+## Running the Game
+
+Run the main game file with:
+
+```text
+python alien_invasion.py
+```
+
+## Starter Code
+
+This project was adapted from the Alien Invasion starter repository provided for the course:
+
+https://github.com/RedBeard41/alien_Invasion_starter
