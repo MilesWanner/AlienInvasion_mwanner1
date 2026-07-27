@@ -133,8 +133,6 @@ class AlienInvasion:
             current_y += 2 * alien_height
             current_x = alien_width
 
-        self.aliens.add(alien)
-
     def _create_alien(self, x_position: int, y_position: int) -> None:
         """Create an alien, set its position, and add it to the fleet."""
         new_alien = Alien(self)
