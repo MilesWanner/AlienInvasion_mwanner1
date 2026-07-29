@@ -9,19 +9,21 @@ Date: July 2026
 
 import pygame
 from pathlib import Path
+from pygame.sprite import Sprite
 
-class Ship:
+class Ship(Sprite):
     """Represent and manage the player-controlled ship."""
     def __init__(self, ai_game: "AlienInvasion") -> None:
         """Initialize the ship and place it along the left edge of the screen."""
+        super().__init__()
         self.screen = ai_game.screen
         self.screen_rect = self.screen.get_rect()
         self.settings = ai_game.settings
 
         image_path = Path(__file__).parent / "images" / "ship.bmp"
-        self.image = pygame.image.load(image_path)
-        self.rotated_image = pygame.transform.rotate(self.image, -90)
-        self.rect = self.rotated_image.get_rect()
+        original_image = pygame.image.load(image_path)
+        self.image = pygame.transform.rotate(original_image, -90)
+        self.rect = self.image.get_rect()
         self.rect.midleft = self.screen_rect.midleft
         self.moving_up = False
         self.moving_down = False
@@ -35,7 +37,7 @@ class Ship:
 
     def blitme(self) -> None:
         """Draw the ship at its current position."""
-        self.screen.blit(self.rotated_image, self.rect)
+        self.screen.blit(self.image, self.rect)
 
     def center_ship(self) -> None:
         """Return the ship to its starting position on the left edge."""
