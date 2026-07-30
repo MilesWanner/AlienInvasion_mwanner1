@@ -197,7 +197,7 @@ class AlienInvasion:
         alien_width = alien.rect.width
         alien_height = alien.rect.height
 
-        current_x = 8 * alien_width
+        current_x = 8.5 * alien_width
         current_y = alien_height
 
         while current_y < (
@@ -215,7 +215,7 @@ class AlienInvasion:
                 current_x += 2 * alien_width
 
             current_y += 2 * alien_height
-            current_x = 8 * alien_width
+            current_x = 8.5 * alien_width
 
     def _create_alien(
         self,
@@ -230,6 +230,7 @@ class AlienInvasion:
 
     def _update_aliens(self) -> None:
         """Update the fleet and detect ship collisions."""
+        self._check_fleet_edges()
         self.aliens.update()
 
         if pygame.sprite.spritecollideany(
@@ -239,6 +240,17 @@ class AlienInvasion:
             self._ship_hit()
 
         self._check_aliens_left()
+
+    def _check_fleet_edges(self):
+        for alien in self.aliens.sprites():
+            if alien.check_edges():
+                self._change_fleet_direction()
+                break
+
+    def _change_fleet_direction(self):
+        for alien in self.aliens.sprites():
+            alien.rect.x -= self.settings.fleet_drop_speed
+        self.settings.fleet_direction *= -1
 
     def _ship_hit(self) -> None:
         """Handle the ship being hit by an alien."""
