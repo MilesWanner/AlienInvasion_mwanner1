@@ -4,7 +4,7 @@ Author: Miles Wanner
 Purpose: Define the alien class, load the image, and manage its movement. 
 Starter Code: Adapted from the Alien Invasion starter repository:
 https://github.com/RedBeard41/alien_Invasion_starter
-Date: July 2026
+Date: July 31 2026
 """
 
 import pygame
@@ -28,7 +28,7 @@ class Alien(Sprite):
         self.settings = ai_game.settings
 
     def update(self) -> None:
-        """Update the alien's horizontal position based on the fleet direction."""
+        """Update the alien's vertical position based on the fleet direction."""
         self.rect.y += self.settings.alien_speed * self.settings.fleet_direction
 
     def check_edges(self) -> bool:

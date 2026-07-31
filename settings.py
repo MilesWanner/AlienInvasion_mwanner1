@@ -4,7 +4,7 @@ Author: Miles Wanner
 Purpose: Store settings that control the screen, ship, bullets, and aliens.
 Starter Code: Adapted from the Alien Invasion starter repository:
 https://github.com/RedBeard41/alien_Invasion_starter
-Date: July 2026
+Date: July 31 2026
 """
 
 
@@ -36,7 +36,7 @@ class Settings:
         """Initialize settings that change throughout the game."""
         self.ship_speed = 4.0
         self.bullet_speed = 5.0
-        self.alien_speed = 1.0
+        self.alien_speed = 2.0
         self.alien_points = 50
 
         self.fleet_direction = -1

@@ -4,7 +4,7 @@ Author: Miles Wanner
 Purpose: Define the bullets, set their starting position, and manage their movement.
 Starter Code: Adapted from the Alien Invasion starter repository:
 https://github.com/RedBeard41/alien_Invasion_starter
-Date: July 2026
+Date: July 31 2026
 """
 
 import pygame

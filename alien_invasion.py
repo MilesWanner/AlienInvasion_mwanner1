@@ -5,7 +5,7 @@ Purpose: Run Alien Invasion and manage events, objects, collisions,
 scoring, game states, and screen updates.
 Starter Code: Adapted from the Alien Invasion starter repository:
 https://github.com/RedBeard41/alien_Invasion_starter
-Date: July 2026
+Date: July 31 2026
 """
 
 import sys
@@ -197,7 +197,7 @@ class AlienInvasion:
         alien_width = alien.rect.width
         alien_height = alien.rect.height
 
-        current_x = 8.5 * alien_width
+        current_x = 8 * alien_width
         current_y = alien_height
 
         while current_y < (
@@ -215,7 +215,7 @@ class AlienInvasion:
                 current_x += 2 * alien_width
 
             current_y += 2 * alien_height
-            current_x = 8.5 * alien_width
+            current_x = 8 * alien_width
 
     def _create_alien(
         self,
@@ -241,13 +241,15 @@ class AlienInvasion:
 
         self._check_aliens_left()
 
-    def _check_fleet_edges(self):
+    def _check_fleet_edges(self) -> None:
+        """Respond appropriately if any aliens have reached a top or bottom edge."""
         for alien in self.aliens.sprites():
             if alien.check_edges():
                 self._change_fleet_direction()
                 break
 
-    def _change_fleet_direction(self):
+    def _change_fleet_direction(self) -> None:
+        """Drop the entire fleet to the left and change its vertical direction."""
         for alien in self.aliens.sprites():
             alien.rect.x -= self.settings.fleet_drop_speed
         self.settings.fleet_direction *= -1
