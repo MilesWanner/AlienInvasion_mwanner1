@@ -19,12 +19,12 @@ class Alien(Sprite):
 
         self.screen = ai_game.screen
         image_path = Path(__file__).parent / "images" / "alien.bmp"
-        self.image = pygame.image.load(image_path)
-        self.rect = self.image.get_rect()
 
+        original_image = pygame.image.load(image_path)
+        self.image = pygame.transform.rotate(original_image, -90)
+        self.rect = self.image.get_rect()
         self.rect.x = self.rect.width
         self.rect.y = self.rect.height
-
         self.settings = ai_game.settings
 
     def update(self) -> None:
