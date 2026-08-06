@@ -4,7 +4,8 @@ Author: Miles Wanner
 Purpose: Define the scoreboard HUD element, set its score and high score, and write it to the screen.
 Starter Code: Adapted from the Alien Invasion starter repository:
 https://github.com/RedBeard41/alien_Invasion_starter
-Date: July 31 2026
+Date: August 6, 2026
+Project Status: COMPLETE
 """
 
 import pygame.font

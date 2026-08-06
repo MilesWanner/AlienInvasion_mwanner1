@@ -4,7 +4,8 @@ Author: Miles Wanner
 Purpose: Define the alien class, load the image, and manage its movement. 
 Starter Code: Adapted from the Alien Invasion starter repository:
 https://github.com/RedBeard41/alien_Invasion_starter
-Date: July 31 2026
+Date: August 6, 2026
+Project Status: COMPLETE
 """
 
 import pygame

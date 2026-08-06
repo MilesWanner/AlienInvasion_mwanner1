@@ -5,7 +5,8 @@ Purpose: Run Alien Invasion and manage events, objects, collisions,
 scoring, game states, and screen updates.
 Starter Code: Adapted from the Alien Invasion starter repository:
 https://github.com/RedBeard41/alien_Invasion_starter
-Date: July 31 2026
+Date: August 6, 2026
+Project Status: COMPLETE
 """
 
 import sys
